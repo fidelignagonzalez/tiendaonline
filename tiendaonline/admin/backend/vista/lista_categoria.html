@@ -1,0 +1,120 @@
+<div class="content">
+    <div>
+        <div class="card-body">
+            <input class="btn btn-primary" type="button" onclick="location.href='#';" id="agregar_categoria" value="Agregar" />
+        </div>
+        
+      </div>
+
+        <div class="footer-inner bg-white">
+            
+            <div class="col-md-12">
+                
+                <div class="card">
+                    
+
+                    <div class="card-header">
+                        <strong class="card-title">Listado categorías</strong>
+                    </div>
+                    <div class="card-body">
+                        <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Categoría</th>
+                                    <th>Imagen categoría</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tecnologia</td>
+                                    <td class="avatar">
+                                        <div class="round-img">
+                                            <a href="#"><img src="images/categoria/avatar_tecnologia.jpg" alt=""></a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i></button>
+                                        <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Internet de la cosas</td>
+                                    <td class="avatar">
+                                        <div class="round-img">
+                                            <a href="#"><img class="rounded-circle" src="images/categoria/internet_cosas.jpg" alt=""></a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i></button>
+                                        <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td>Seguridad</td>
+                                    <td class="avatar">
+                                        <div class="round-img">
+                                            <a href="#"><img class="rounded-circle" src="images/categoria/seguridad.jpg" alt=""></a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i></button>
+                                        <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td>Telefonia</td>
+                                    <td>
+                                        <div class="round-img">
+                                            <a href="#"><img class="rounded-circle" src="images/categoria/telefonia.jpg" alt=""></a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i></button>
+                                        <button type="button" class="btn btn-success"><i class="fa fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-end">
+                              <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item"><a class="page-link" href="#">2</a></li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item">
+                                <a class="page-link" href="#">Siguiente</a>
+                              </li>
+                            </ul>
+                          </nav>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+       
+                
+
+        <script>
+        
+
+            //Java Scrip para recargar paginas html en el mismo index sin recargar todo
+            $(document).ready(function(){
+                   
+                $('#agregar_categoria').click(function(){
+                    $("#contenido").load("backend/vista/agregar_categoria.html");
+                });
+                                    
+            });
+    
+        </script>
+</div><!-- .content -->

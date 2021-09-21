@@ -1,0 +1,94 @@
+<div class="content">
+    <div class="footer-inner bg-white">
+        <div >
+            <div class="card-header">
+                <strong>Ingreso Artículos</strong>
+            </div>
+            <div class="card-body card-block">
+                <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre Artículo : </label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="Nombre_articulo" name="Nombre_articulo" placeholder="Ingrese Nombre Artículo" class="form-control"><small class="form-text text-muted"></small></div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Modelo : </label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="modelo" name="modelo" placeholder="Ingrese Modelo Artículo" class="form-control"><small class="form-text text-muted"></small></div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descripción Artículo</label></div>
+                        <div class="col-12 col-md-9"><textarea name="descripcion_articulo" id="descripcion_articulo" rows="9" placeholder="Descripción Artículo" class="form-control"></textarea></div>
+                    </div>
+
+                    <div class="row form-group">
+                        <input type="file" id="files" name="files[]" accept=".jpg, .jpeg, .png"/><br />
+                        <output id="list"></output>  
+                    </div> 
+                    <script>
+                        function archivo(evt) {
+                            var files = evt.target.files; // FileList object
+                       
+                            // Obtenemos la imagen del campo "file".
+                            for (var i = 0, f; f = files[i]; i++) {
+                              //Solo admitimos imágenes.
+                              if (!f.type.match('image.*')) {
+                                  continue;
+                              }
+                       
+                              var reader = new FileReader();
+                       
+                              reader.onload = (function(theFile) {
+                                  return function(e) {
+                                    // Insertamos la imagen
+                                   document.getElementById("list").innerHTML = ['<img class="thumb" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+                                  };
+                              })(f);
+                       
+                              reader.readAsDataURL(f);
+                            }
+                        }
+                       
+                        document.getElementById('files').addEventListener('change', archivo, false);
+                    </script>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="select" class=" form-control-label">Unidad de Medida</label></div>
+                        <div class="col-12 col-md-9">
+                            <select name="unidad" id="unidad" class="form-control">
+                                <option value="0">Unidad</option>
+                                <option value="1">Metro</option>
+                                <option value="2">Kilo</option>
+                                <option value="3">MegaByte</option>
+                                <option value="0">MegaHers</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Indique sus accesorios</label></div>
+                        <div class="col-12 col-md-9"><textarea name="accesorios" id="accesorios" rows="9" placeholder="accesorios" class="form-control"></textarea></div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Específicaciones</label></div>
+                        <div class="col-12 col-md-9"><textarea name="especioficaciones" id="especioficaciones" rows="9" placeholder="Especioficaciones" class="form-control"></textarea></div>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Agregar
+                </button>
+                <button type="reset" class="btn btn-danger btn-sm">
+                    <i class="fa fa-ban"></i> Limpiar formulario
+                </button>
+            </div>
+        </div>
+        
+    </div>
+
+</div><!-- .content -->

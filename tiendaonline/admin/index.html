@@ -1,0 +1,418 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Administrador Contenidos Gestión Ventas</title>
+    <meta name="description" content="Ela Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
+
+    
+    <style>
+    #weatherWidget .currentDesc {
+        color: #ffffff!important;
+    }
+        .traffic-chart {
+            min-height: 335px;
+        }
+        #flotPie1  {
+            height: 150px;
+        }
+        #flotPie1 td {
+            padding:3px;
+        }
+        #flotPie1 table {
+            top: 20px!important;
+            right: -10px!important;
+        }
+        .chart-container {
+            display: table;
+            min-width: 270px ;
+            text-align: left;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #flotLine5  {
+             height: 105px;
+        }
+
+        #flotBarChart {
+            height: 150px;
+        }
+        #cellPaiChart{
+            height: 160px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Menu Principal -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Administrador Contenidos</a>
+                    </li>
+                    <li class="menu-title">Administración</li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Usuarios</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="listar_usuarios">Listar</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="agregar_usuarios">Agregar</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Roles</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="listar_rol">Listar</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="agregar_rol">Agregar</a></li>
+                            </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Clientes</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="listar_cliente">Listar</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="agregar_cliente">Agregar</a></li>
+                          
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Confirguración</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="listar_articulo">Artículos</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="lista_categoria">Categorias</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="lista_transportadora">Transportadoras</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-title">Ventas</li>
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Ordenes</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="lista_orden">Listar</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="agregar_orden">Agregar</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Carrito</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="lista_carrito">Lista Carrito</a></li>
+                           
+                        </ul>
+                    </li>
+                    
+                    <li class="menu-title">Compras</li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Productos</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="lista_Producto">Listar Produtos</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="Agregar_producto">Agregar Productos</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="menu-title">Despachos</li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Envios</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="agrega_envio">Envios</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="lista_envio">Lista Envios</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="#" id="seguimiento">Seguimiento</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+   <div id="right-panel" class="right-panel">
+       
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="./"><img src="../images/logo.png" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="./"><img src="../images/logo2.png" alt="Logo"></a>
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
+            </div>
+            <div class="top-right">
+                <div class="header-menu">
+                    <div class="header-left">
+                        <button class="search-trigger"><i class="fa fa-search"></i></button>
+                        <div class="form-inline">
+                            <form class="search-form">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
+                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                            </form>
+                        </div>
+
+                        
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="../images/avatar/admin.jpeg" alt="User Avatar">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Perfil</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Salir</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+      
+        <div class="content">
+            
+            <div class="animated fadeIn">
+               
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-1">
+                                        <i class="pe-7s-cash"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text">$<span class="count">1.200.000</span></div>
+                                            <div class="stat-heading">Ventas</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-2">
+                                        <i class="pe-7s-cart"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text"><span class="count">234</span></div>
+                                            <div class="stat-heading">Pedidos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-3">
+                                        <i class="pe-7s-browser"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text"><span class="count">2.300</span></div>
+                                            <div class="stat-heading">Productos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-4">
+                                        <i class="pe-7s-users"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text"><span class="count">23</span></div>
+                                            <div class="stat-heading">Clientes</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               <div id ="contenido" class="footer-inner bg-white"> </div>    
+              
+                <div class="modal fade none-border" id="event-modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body"></div>
+                            <div class="modal-footer">
+                                
+                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
+                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             
+            </div>
+            <!-- .animated -->
+        </div>
+        <!-- /.content -->
+        <div class="clearfix"></div>
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-inner bg-white">
+                <div class="row">
+                    <div class="col-sm-6">
+                        Copyright &copy; 2021 Grupo Diplomado
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+       
+    </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!--  Chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
+
+    <!--Chartist Chart-->
+    <script src="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartist-plugin-legend@0.6.2/chartist-plugin-legend.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flot-pie@1.0.0/src/jquery.flot.pie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/simpleweather@3.1.0/jquery.simpleWeather.min.js"></script>
+    <script src="assets/js/init/weather-init.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
+    <script src="assets/js/init/fullcalendar-init.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+
+    <!--Local Stuff-->
+    <script>
+        
+
+        //Java Scrip para recargar paginas html en el mismo index sin recargar todo
+        $(document).ready(function(){
+            $('#listar_usuarios').click(function(){
+                $("#contenido").load("backend/vista/lista_usuarios.html");
+            });
+
+            $('#agregar_usuarios').click(function(){
+                $("#contenido").load("backend/vista/agregar_usuario.html");
+            });
+
+            $('#listar_rol').click(function(){
+                $("#contenido").load("backend/vista/lista_roles.html");
+            });
+
+            $('#agregar_rol').click(function(){
+                $("#contenido").load("backend/vista/agregar_rol.html");
+            });
+
+            $('#agregar_cliente').click(function(){
+                $("#contenido").load("backend/vista/ingreso_cliente.html");
+            });
+
+            $('#listar_articulo').click(function(){
+                $("#contenido").load("backend/vista/listar_articulo.html");
+            });
+
+            $('#agregar_articulo').click(function(){
+                $("#contenido").load("backend/vista/agregar_articulo.html");
+            });
+
+            $('#lista_categoria').click(function(){
+                $("#contenido").load("backend/vista/lista_categoria.html");
+            });
+
+            $('#agregar_categoria').click(function(){
+                $("#contenido").load("backend/vista/agregar_categoria.html");
+            });
+
+            $('#lista_transportadora').click(function(){
+                $("#contenido").load("backend/vista/lista_transportadora.html");
+            });
+
+            $('#agregar_transportadora').click(function(){
+                $("#contenido").load("backend/vista/agregar_transportadora.html");
+            });
+
+            $('#lista_orden').click(function(){
+                $("#contenido").load("backend/vista/lista_orden.html");
+            });
+
+            $('#agregar_orden').click(function(){
+                $("#contenido").load("backend/vista/agregar_orden.html");
+            });
+
+            $('#agrega_orden').click(function(){
+                $("#contenido").load("backend/vista/agrega_orden.html");
+            });
+
+            $('#lista_carrito').click(function(){
+                $("#contenido").load("backend/vista/listar_carrito.html");
+            });
+
+            $('#lista_Producto').click(function(){
+                $("#contenido").load("backend/vista/lista_Producto.html");
+            });
+
+            $('#agrega_Producto').click(function(){
+                $("#contenido").load("backend/vista/agrega_Producto");
+            });
+
+            $('#lista_envio').click(function(){
+                $("#contenido").load("backend/vista/lista_envio.html");
+            });
+
+            $('#agrega_envio').click(function(){
+                $("#contenido").load("backend/vista/agrega_envio.html");
+            });
+
+            $('#seguimiento').click(function(){
+                $("#contenido").load("backend/vista/segimiento.html");
+            });
+            
+            
+        });
+
+    </script>
+
+
+</body>
+</html>

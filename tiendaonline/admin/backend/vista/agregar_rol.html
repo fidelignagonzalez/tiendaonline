@@ -1,0 +1,79 @@
+<div class="content">
+    <div class="footer-inner bg-white">
+        <div >
+            <div class="card-header">
+                <strong>Ingreso Roles del sistema</strong>
+            </div>
+            <div class="card-body card-block">
+                <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre Rol : </label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="Nombres" name="Nombres-input" placeholder="Ingrese Nombres" class="form-control"><small class="form-text text-muted"></small></div>
+                    </div>
+
+                    <div class="container">
+                        <form role="form">
+                          <div class="form-group">
+                            <br>
+                            <label for="sel2">Seleccione los permisos a asignar a este Rol</label>
+                            <select multiple class="form-control" id="sel2">
+                              <option>Listar usuarios</option>
+                              <option>Agregar usuarios</option>
+                              <option>Listar roles</option>
+                              <option>Agregar Roles</option>
+                              <option>Listar clientes</option>
+                              <option>Agregar Clientes</option>
+                              <option>Configurar Artículos</option>
+                              <option>Configurar Categorías</option>
+                              <option>Configurar Transportadoras</option>
+                              <option>Listar ordenes</option>
+                              <option>Agregar ordenes</option>
+                              <option>Listar Productos carrito</option>
+                              <option>Listar Productos</option>
+                              <option>Agregar Productos</option>
+                              <option>Realizar envios</option>
+                              <option>Listar y editar envíos</option>
+                              <option>Realizar y reportar Seguimiento envios</option>
+                            </select>
+                          </div>
+                        </form>
+                      </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="select" class=" form-control-label">Tipo Rol</label></div>
+                        <div class="col-12 col-md-9">
+                            <select name="tipo_documento" id="tipo_documento" class="form-control">
+                                <option value="0">Seleccione el rol </option>
+                                <option value="1">Administrador</option>
+                                <option value="2">Ventas</option>
+                                <option value="3">Productos</option>
+                                <option value="3">Despachos y envíos</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="email-input" class=" form-control-label">Correo Electrónico</label></div>
+                        <div class="col-12 col-md-9"><input type="email" id="usuario" name="usuario" placeholder="Ingrese Correo Electronico" class="form-control"><small class="help-block form-text"></small></div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="password-input" class=" form-control-label">Contraseña</label></div>
+                        <div class="col-12 col-md-9"><input type="password" id="password" name="password-input" placeholder="Password" class="form-control"><small class="help-block form-text"></small></div>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Agregar
+                </button>
+                <button type="reset" class="btn btn-danger btn-sm">
+                    <i class="fa fa-ban"></i> Limpiar formulario
+                </button>
+            </div>
+        </div>
+        
+    </div>
+
+</div><!-- .content -->
