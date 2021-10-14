@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    
+</head>
+<body id="body">
+    
+    <header>
+        <div class="icon__menu">
+            <i class="fas fa-bars" id="btn_open"></i>
+        </div>
+        <div class="content-row">
+            <strong><h1>Clientes</h1></strong>
+        </div>
+    </header>
+
+    <div class="menu__side" id="menu_side">
+
+        <div class="name__page">
+            <i class="fa fa-database"></i>
+            <h4>Panel Control</h4>
+        </div>
+
+        <div class="options__menu">	
+        <ul class="list-group panel">
+            
+            <a href="#" target="myFrame" class="selected">
+                <div class="option">
+                    <i class="fas fa-home" title="Inicio"></i>
+                    <h4>Inicio</h4>
+                </div>
+            </a>
+            
+            <a href="#demo1" class="list-group-item " data-toggle="collapse"><strong>Administracion</strong><span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a href="lista_clientes.html" target="myFrame">
+                        <div class="option"><i class="fa fa-address-book-o" title="Cliente"></i>
+                        <h4>Cliente</h4>
+                    </div>
+                    </a>
+                
+                    <a href="lista_usuario.html" target="myFrame">
+                        <div class="option"><i class="fa fa-users" title="Usuarios"></i>
+                        <h4>Usuarios</h4>
+                    </div>
+                    </a>
+               
+                    <a href="lista_rol_permiso.html" target="myFrame">
+                        <div class="option"><i class="fa fa-user-circle-o" title="Roles"></i>
+                        <h4>Roles</h4>
+                    </div>
+                    </a>
+               
+            <a href="#demo2" class="list-group-item " data-toggle="collapse"><strong>Ventas</strong><span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a  href="lista_orden.html" target="myFrame">
+                    <div class="option">
+                        <i class="fa fa-shopping-basket " title="Pedidos"></i>
+                        <h4>Pedidos</h4>
+                    </div>
+                </a>
+
+                <a  href="lista_carrito.html" target="myFrame">
+                    <div class="option">
+                        <i class="fa fa-cart-arrow-down" title="Carrito"></i>
+                        <h4>Carrito</h4>
+                    </div>
+                </a>
+               
+            <a href="#demo1" class="list-group-item " data-toggle="collapse"><strong>Compras</strong><span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a  href="lista_producto.html" target="myFrame">
+                    <div class="option">
+                        <i class="fa fa-glass" title="Productos"></i>
+                        <h4>Productos</h4>
+                    </div>
+                </a>
+                <a  href="lista_articulo.html" target="myFrame">
+                    <div class="option">
+                        <i class="fa fa-ship" title="Articulos"></i>
+                        <h4>Articulos</h4>
+                    </div>
+                </a>
+                <a href="#demo1" class="list-group-item " data-toggle="collapse"><strong>Despachos</strong><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <a href="lista_detalletransporta.html" target="myFrame">
+                        <div class="option">
+                            <i class="fa fa-truck " title="Envios"></i>
+                            <h4>Envios</h4>
+                        </div>
+                    </a>
+
+                   
+        </ul>
+        </div>
+
+        
+
+    </div>
+
+    <main>
+        <div style="height: 550px"> 
+        <iframe name="myFrame" style="height: 100%; width: 100%; border: 0cm;" ></iframe>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
