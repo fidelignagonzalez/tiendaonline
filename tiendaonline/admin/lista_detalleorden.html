@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/alertify.min.css" />
+    <link rel="stylesheet" href="css/themes/default.min.css" />
+    <title>Detalle Orden</title>
+    <style>
+        body{
+            background-color: #f7f6f6;
+
+        }
+        table thead{
+            background-color: #0a4f70;
+            color:white;
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-4 shadow-lg p-3 mb-5  rounded ">
+        <button id="btnCrear" type="button" class="btn btn-primary">Agregar Detalle de la Orden</button>
+
+        <table id="pedidos" class="table mt-2 table-bordered table-striped">
+            <thead>
+                <tr class="text-center">
+                    <th>Id detalleorden</th>
+                    <th>Orden</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Valor Producto</th>
+                    <th>Total Orden</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    
+    <div class="modal fade" id="modalDetalleorden" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header bg-primary text-white" >
+            <h5 class="modal-title" id="exampleModalLabel">Agregar Orden</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <form>
+
+                <div class="mb-3">
+                    <label for="idDetalleorden" class="col-form-label">Id Orden :</label>
+                    <input id="idDetalleorden" placeholder="Agregue Id"  type="text" class="form-control" id="recipient-name" required autocomplete="off"
+                    oninvalid="setCustomValidity('Agregue Id')" oninput="setCustomValidity('')">
+                </div>
+
+                <div class="mb-3">
+                    <label for="idOrden" class="col-form-label">Numero de Orden</label>
+                    <input id="idOrden" placeholder="Seleccione Tipo Documento"  type="text" class="form-control" id="recipient-name" required autocomplete="off"
+                    oninvalid="setCustomValidity('Seleccione Tipo Documento')" oninput="setCustomValidity('')">
+                </div>
+
+                <div class="mb-3">
+                    <label for="idProducto" class="col-form-label">Id Cliente</label>
+                    <input id="idProducto" placeholder="Ingrese el Documento"  type="text" class="form-control" id="recipient-name" required autocomplete="off"
+                    oninvalid="setCustomValidity('Ingrese el Documento')" oninput="setCustomValidity('')">
+                </div>
+
+                <div class="mb-3">
+                    <label for="cantidad" class="col-form-label">Id Estado</label>
+                    <input id="cantidad" placeholder="Digite el nombre"  type="text" class="form-control" id="recipient-name" required autocomplete="off"
+                    oninvalid="setCustomValidity('Digite un Nombre')" oninput="setCustomValidity('')">
+                </div>
+
+                <div class="mb-3">
+                    <label for="valor_producto" class="col-form-label">Fecha de Orden</label>
+                    <input id="valor_producto" placeholder="Digite el Apellido"  type="text" class="form-control" id="recipient-name" required autocomplete="off"
+                    oninvalid="setCustomValidity('Digite un Nombre')" oninput="setCustomValidity('')">
+                </div>
+
+                <div class="mb-3">
+                    <label for="total_orden" class="col-form-label">Total Orden</label>
+                    <input id="total_orden" placeholder="Digite el Teléfono" type="text" class="form-control" id="recipient-name" required  autocomplete="off"
+                    oninvalid="setCustomValidity('Digite un Teléfono')" oninput="setCustomValidity('')">
+                </div>
+
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+        </script>
+    <script src="js/alertify.min.js"></script>
+    <script src="js/frontend/detalleorden.js"></script>
+
+</body>
+
+</html>
